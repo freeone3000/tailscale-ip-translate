@@ -20,7 +20,7 @@ struct Opt {
 }
 
 fn main() {
-    let opt = Opt::from_args_safe().expect("Failed to parse arguments");
+    let opt = Opt::from_args();
     if opt.reverse {
         println!("{}", six_to_four(&opt.addr).expect("Failed to convert IPv6 to IPv4"));
     } else {
