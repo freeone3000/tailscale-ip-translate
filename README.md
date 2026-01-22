@@ -3,7 +3,7 @@
 Translates IPv4 addresses for a tailscale 6to4 subnet router.
 
 See [the tailscale documentation](https://tailscale.com/kb/1201/4via6-subnets) for more information
-as to what a 4to6 subnet router is, and why you would want one.
+as to what a 4via6 subnet router is, and why you would want one.
 
 This tool aims to simplify the transition, allowing you to type in the ipv4 address, and retrieving
 the ipv6 address for your tailnet.
