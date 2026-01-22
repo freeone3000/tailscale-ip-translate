@@ -1,26 +1,16 @@
+mod args;
+
 use std::net::{Ipv4Addr, Ipv6Addr};
 use std::str::FromStr;
 
-use structopt::StructOpt;
-
-#[derive(Debug, StructOpt)]
-#[structopt(name = "tailscale_translator_options", about = "Generate Tailscale IPv6 translator addresses from IPv4 addresses.")]
-struct Opt {
-    /// Translator ID (default: 7)
-    #[structopt(short, long, default_value = "7")]
-    translator_id: u32,
-
-    /// IPv4 address to convert
-    #[structopt(short)]
-    addr: String,
-
-    /// Reversing flag - true for reverse, false for forward (default: false)
-    #[structopt(short = "r", long = "reverse")]
-    reverse: bool,
-}
-
 fn main() {
-    let opt = Opt::from_args();
+    let opt = match args::parse() {
+        Ok(o) => o,
+        Err(e) => {
+            eprintln!("{}", e);
+            std::process::exit(1);
+        }
+    };
     if opt.reverse {
         println!("{}", six_to_four(&opt.addr).expect("Failed to convert IPv6 to IPv4"));
     } else {

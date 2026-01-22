@@ -1,12 +1,9 @@
 [package]
 name = "tailscale-ip-translate"
-version = "1.0.1"
+version = "1.1.0"
 edition = "2024"
 description = "Translates IPv4 addresses to Tailscale 4to6 subnet addresses"
 repository = "https://github.com/freeone3000/tailscale-ip-translate"
 homepage = "https://github.com/freeone3000/tailscale-ip-translate"
 license-file = "LICENSE"
 readme = "README.md"
-
-[dependencies]
-structopt = { version = "0.3", default-features = false }
