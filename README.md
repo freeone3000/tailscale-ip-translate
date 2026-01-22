@@ -17,6 +17,7 @@ Installation can be performed via `cargo install tailscale-ip-translate`
 tailscale-ip-translate
 tailscale-ip-translate <ipv4>
 tailscale-ip-translate <site-id> <ipv4>
+tailscale-ip-translate -r <ipv6>
 ```
 
 If zero arguments are supplied, the IPv6 address for `192.168.1.0` on site 7 will be output.
@@ -24,3 +25,6 @@ If zero arguments are supplied, the IPv6 address for `192.168.1.0` on site 7 wil
 If one argument is supplied, the IPv6 address for the supplied IPv4 address on site 7 will be output.
 
 If two arguments are supplied, the IPv6 address for the supplied IPv4 address on the supplied site id will be output.
+
+If the `-r` flag is supplied, the reverse translation is performed, taking an IPv6 address and outputting
+the corresponding IPv4 address. The site id may be provided, but will be ignored.
